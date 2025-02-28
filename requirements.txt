@@ -1,8 +1,9 @@
-sentence-transformers==2.2.2
+sentence-transformers==2.5.1
 langchain
 flask
 pypdf
 python-dotenv
+pinecone-client
 pinecone[grpc]
 langchain-pinecone
 langchain_community
