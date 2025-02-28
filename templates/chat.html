@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chatbot</title>
+
+    <!-- Bootstrap and Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Link to the custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-box">
+        <div class="chat-header">
+            <div class="chat-info">
+                <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="chat-avatar">
+                <div>
+                    <span>Medical Chatbot</span>
+                    <p>Ask me anything!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="messageFormeight" class="message-area"></div>
+
+        <div class="chat-footer">
+            <form id="messageArea" class="input-group">
+                <input type="text" id="text" placeholder="Type your message..." class="form-control type_msg" required>
+                <div class="input-group-append">
+                    <button type="submit" class="send-btn">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>Made by <span class="neon-text">Mana</span></p>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        $("#messageArea").on("submit", function (event) {
+            const date = new Date();
+            const hour = date.getHours();
+            const minute = date.getMinutes();
+            const str_time = hour + ":" + (minute < 10 ? "0" + minute : minute);
+            var rawText = $("#text").val();
+
+            var userHtml = `<div class="msg-right">
+                <div class="message-send">${rawText}<span class="msg-time">${str_time}</span></div>
+                <div class="user-avatar"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle"></div>
+            </div>`;
+
+            $("#text").val("");
+            $("#messageFormeight").append(userHtml);
+
+            $.ajax({
+                data: {
+                    msg: rawText
+                },
+                type: "POST",
+                url: "/get",
+            }).done(function (data) {
+                var botHtml = `<div class="msg-left">
+                    <div class="bot-avatar"><img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="rounded-circle"></div>
+                    <div class="message-receive">${data}<span class="msg-time">${str_time}</span></div>
+                </div>`;
+                $("#messageFormeight").append($.parseHTML(botHtml));
+            });
+
+            event.preventDefault();
+        });
+    });
+</script>
+
+</body>
+</html>
