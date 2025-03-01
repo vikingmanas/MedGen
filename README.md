@@ -34,20 +34,10 @@ The bot can answer a wide range of medical-related questions, including symptoms
 **User**: *How can I prevent heart disease?*  
 **MedGen**: *To prevent heart disease, it is important to maintain a healthy diet, exercise regularly, avoid smoking, manage stress, and monitor cholesterol and blood pressure levels.*
 
-## 📊 GitHub Stats
-
-![Manas's GitHub Stats](https://github-readme-stats.vercel.app/api?username=vikingmanas&show_icons=true&count_private=true&hide_title=true&hide=prs&hide_rank=true&theme=radical)
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vikingmanas&layout=compact&theme=radical)](https://github.com/vikingmanas)
-
 ## 🔗 Let's Connect!
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/manas-dubey-12345678/)  
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/vikingmanas)
-
-## 🏆 Achievements
-- **Smart India Hackathon Pre-Qualifiers 2024**: Top 100 teams with the **Lawbot** project.
-- **AI-ML Virtual Internship**: Learned TensorFlow, NLP, and AI model development.
 
 ## 🎯 Future Improvements
 - **Voice Integration**: Implement speech-to-text and text-to-speech features for better interaction.
